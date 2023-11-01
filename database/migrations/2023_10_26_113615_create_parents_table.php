@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('prenom');
             $table->integer('telephone');
             $table->string('adresse');
+            $table->string('lien_parente');
             $table->timestamps();
         });
     }

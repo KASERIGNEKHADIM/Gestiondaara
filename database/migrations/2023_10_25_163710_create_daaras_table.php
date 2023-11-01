@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('daaras', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
-            $table->string('Capacite');
-            $table->string('Adresse');
+            $table->string('capacite');
+            $table->string('adresse');
             $table->integer('telephone');
             $table->timestamps();
         });
