@@ -10,8 +10,8 @@ class Daara extends Model
     use HasFactory;
     protected $fillable = [
         'nom',
-        'Capacite',
-        'Adresse',
+        'capacite',
+        'adresse',
         'telephone',
     ];
 }

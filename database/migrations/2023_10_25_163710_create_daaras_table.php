@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nom');
             $table->string('capacite');
             $table->string('adresse');
-            $table->integer('telephone');
+            $table->string('telephone');
             $table->timestamps();
         });
     }

@@ -15,10 +15,10 @@ use App\Http\Controllers\NdonguodaaraController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-// Route::get('/', function () {
-//   return view('welcome');
-//  });
 Route::get('/', function () {
+    return view('welcome');
+});
+Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
@@ -28,6 +28,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 Route::resource('daaras', DaaraController::class);
+
 Route::resource('ndonguodaaras', NdonguodaaraController::class);
 
 require __DIR__.'/auth.php';
+

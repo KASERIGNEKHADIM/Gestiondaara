@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use App\Models\Daara;
 use Illuminate\Http\Request;
 
@@ -13,6 +14,9 @@ class DaaraController extends Controller
     public function index()
     {
         //
+        $daaras=Daara::all();
+        return view('daaras.index',compact('daaras'));
+
     }
 
     /**
@@ -31,6 +35,21 @@ class DaaraController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'nom' => 'string|required|',
+            'capacite' => 'string|required',
+            'adresse'=>'string|required',
+            'telephone'=>'string|required',
+        ]);
+        try {
+            //code...
+            $daaras=Daara::create($request->all());
+            return redirect()->route('daaras.index');
+        } catch (Exception $e) {
+            //throw $th;
+            dd($e);
+        }
+
     }
 
     /**

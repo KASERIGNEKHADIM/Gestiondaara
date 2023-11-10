@@ -1,4 +1,4 @@
-@extends('layouts.navigation')
+@extends('layouts.master')
 @extends('dashboard')
 
 @section('contenue')
